@@ -1,5 +1,5 @@
 const BASE_URL =
-  import.meta.env.VITE_REACT_API_URL || "http://localhost:5173/api/v1";
+  import.meta.env.VITE_REACT_API_URL || "http://localhost:5173/api";
 
 const apiRequest = async (endpoint, options = {}) => {
   try {
@@ -36,6 +36,7 @@ const apiRequest = async (endpoint, options = {}) => {
 };
 
 export const test = async () => {
+  console.log(BASE_URL);
   const res = await fetch(`${BASE_URL}/test`, {
     method: "POST",
   });

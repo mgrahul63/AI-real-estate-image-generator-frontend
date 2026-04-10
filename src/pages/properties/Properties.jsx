@@ -59,8 +59,7 @@ const Properties = () => {
       if (res.success) {
         toast.success(res.data);
       }
-    } catch (error) {}
-    console.log("first");
+    } catch (error) {} 
   };
 
 
