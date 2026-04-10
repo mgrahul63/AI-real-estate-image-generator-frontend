@@ -5,10 +5,10 @@ const UseGuide = () => {
       className="bg-fixed bg-no-repeat bg-cover bg-center py-8 lg:py-20"
       style={{ backgroundImage: `url(${backgroundImage?.useguid})` }}
     >
-      <div className="dark:bg-gray-800 dark:text-gray-100">
-        <div className="container max-w-xl px-6 py-10 lg:py-14 mx-auto space-y-10 md:space-y-24 lg:space-y-24 lg:px-8 lg:max-w-7xl">
+      <div className="bg-white/80 dark:bg-gray-900/80">
+        <div className="container max-w-xl px-6 py-8 lg:py-10 mx-auto space-y-10 md:space-y-24 lg:space-y-24 lg:px-8 lg:max-w-7xl">
           <div>
-            <h2 className="text-3xl font-bold tracking text-center sm:text-5xl dark:text-gray-50">
+            <h2 className="text-3xl font-bold tracking text-center sm:text-3xl dark:text-gray-50">
               How AI Estate Image Generator Works
             </h2>
             <div className="divider my-2 bg-primary h-[5px] w-[5%] mx-auto"></div>
@@ -22,10 +22,10 @@ const UseGuide = () => {
 
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <h3 className="text-2xl font-bold tracking sm:text-3xl dark:text-gray-50">
+              <h3 className="text-2xl font-bold tracking sm:text-2xl dark:text-gray-50">
                 How Our AI Creates Property Images
               </h3>
-              <p className="mt-4 text-lg dark:text-gray-400">
+              <p className="mt-4 dark:text-gray-400">
                 Follow our intuitive process to create, customize, and finalize
                 your property listings effortlessly. Designed for speed,
                 security, and clarity.
@@ -130,10 +130,10 @@ const UseGuide = () => {
           <div>
             <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 lg:items-center overflow-hidden">
               <div className="lg:col-start-2">
-                <h3 className="text-2xl font-bold tracking sm:text-3xl dark:text-gray-50">
+                <h3 className="text-2xl font-bold tracking sm:text-2xl dark:text-gray-50">
                   Property Details with Images
                 </h3>
-                <p className="mt-3 text-lg dark:text-gray-400">
+                <p className="mt-3 dark:text-gray-400">
                   We create visually engaging property descriptions accompanied
                   by images, featuring smooth display, responsive layout, and
                   optimized visuals.

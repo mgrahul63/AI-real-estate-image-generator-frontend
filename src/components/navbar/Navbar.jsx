@@ -32,7 +32,7 @@ export default function Navbar() {
     <header className="fixed w-full bg-white shadow-lg z-50 ">
       <section className="container mx-auto px-2 md:px-0">
         <nav
-          className="flex items-center justify-around py-4 px-4"
+          className="flex items-center justify-around py-2 px-4"
           aria-label="Global"
         >
           <div className="flex items-center lg:flex-1 ml-5">

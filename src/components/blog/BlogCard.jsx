@@ -17,11 +17,11 @@ const BlogCard = ({ blog }) => {
 
           <a
             href="#"
-            className="block mt-3 text-2xl font-semibold text-gray-800  dark:text-white"
+            className="block mt-3 text-2xl font-semibold text-gray-800 "
           >
             {title}
           </a>
-          <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+          <p className="mt-3 text-sm text-gray-500 md:text-sm">
             {content.slice(0, 350)}...
           </p>
           <div className="flex justify-between items-center">

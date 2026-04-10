@@ -1,13 +1,13 @@
 const WhyShoud = () => {
   return (
     <div className="bg-white dark:bg-gray-900">
-      <div className="container px-5 lg:px-6 pb-20 pt-10 lg:pt-20 mx-auto">
+      <div className="container px-5 lg:px-6 pb-20 pt-10 lg:pt-15 mx-auto">
         <div className="py-10">
-          <h2 className="text-3xl lg:text-5xl font-bold tracking text-center dark:text-gray-50">
+          <h1 className="text-3xl lg:text-3xl font-bold tracking text-center dark:text-white">
             Why Choose AI Estate Image Generator?
-          </h2>
+          </h1>
           <div className="divider my-3 bg-primary h-[5px] w-[5%] mx-auto"></div>
-          <p className="w-full md:w-[70%] lg:w-[60%] text-lg mx-auto text-center text-gray-500 dark:text-gray-300">
+          <p className="w-full md:w-[70%] lg:w-[60%] text-lg mx-auto text-center dark:text-white ">
             AI Estate Image Generator helps real estate professionals create
             stunning, high-quality property visuals instantly. Generate
             realistic images, enhance listings, and attract potential buyers

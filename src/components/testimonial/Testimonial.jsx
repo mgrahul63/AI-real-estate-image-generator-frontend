@@ -35,9 +35,9 @@ const reviews = [
 
 const Testimonial = () => {
   return (
-    <section className="bg-gray-200 dark:bg-gray-900 py-12">
+    <section className="bg-white dark:bg-gray-900 py-12">
       <div className="container mx-auto px-6">
-        <h1 className="text-3xl sm:text-5xl font-bold text-center dark:text-gray-50">
+        <h1 className="text-3xl sm:text-3xl font-bold text-center dark:text-gray-50">
           Clients Feedback on{" "}
           <span className="text-primary">AI Estate Generator</span>
         </h1>
@@ -48,11 +48,11 @@ const Testimonial = () => {
         </p>
 
         {/* Scrollable Reviews */}
-        <div className="mt-10 flex space-x-6 overflow-x-auto pb-4 scrollbar-hide">
+        <div className="mt-10 flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="flex-shrink-0 w-[300px] bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md"
+              className="flex-shrink-0 w-[250px] bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const Testimonial = () => {
                 <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
               </svg>
 
-              <p className="text-gray-500 dark:text-gray-400 mb-6">
+              <p className="text-white mb-6">
                 {review.feedback}
               </p>
 
@@ -75,7 +75,7 @@ const Testimonial = () => {
                   alt={review.clientName}
                   className="w-14 h-14 rounded-full object-cover"
                 />
-                <h2 className="mt-4 font-semibold text-gray-800 dark:text-white">
+                <h2 className="mt-4 font-semibold text-white">
                   {review.clientName}
                 </h2>
                 <span className="text-sm text-gray-500 dark:text-gray-400">

@@ -10,8 +10,7 @@ import {
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import app from "../firebase/firebase.config";
-export const AuthContext = createContext();
-console.log("API KEY:", import.meta.env.VITE_REACT_APP_API_KEY);
+export const AuthContext = createContext(); 
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {

@@ -1,6 +1,6 @@
 const ActionButton = ({ children }) => {
   return (
-    <button className="inline-flex items-center bg-primary text-white w-full md:w-auto text-md px-8 py-3 rounded-sm shadow hover:bg-gradient-to-r hover:from-blue-500 hover:to-[#7C6EE4] transition">
+    <button className="inline-flex items-center bg-primary text-white w-full md:w-auto text-md px-8 py-3 rounded-sm shadow hover:bg-gradient-to-r hover:from-blue-500 hover:to-[#7C6EE4] transition cursor-pointer">
       {children}{" "}
       <svg
         className="w-4 h-4 ml-2"

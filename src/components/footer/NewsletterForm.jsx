@@ -54,16 +54,16 @@ const NewsletterForm = ({ status, message, onSubmitted }) => {
     <>
       {/* --------------Newsletter form input field------------- */}
       <div className="">
-        <div className="">
+        <div className=" flex flex-col md:flex-row items-center gap-4 mt-4">
           <input
             onChange={(event) => setEmail(event?.target?.value ?? "")}
             type="email"
             placeholder="Enter your email address"
-            className=" text-slate-500 text-sm"
+            className=" text-slate-500 text-sm p-[5px] px-4 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-primary rounded-sm border border-blue-400"
             onKeyUp={(event) => handleInputKeyEvent(event)}
           />
           <button
-            className="bg-primary text-sm p-[10px] text-white mt-2"
+            className="bg-primary text-sm p-[5px] text-black border border-primary rounded-sm hover:bg-gradient-to-r hover:from-blue-500 hover:to-[#7C6EE4] transition cursor-pointer w-full md:w-auto"
             onClick={handleFormSubmit}
           >
             Submit

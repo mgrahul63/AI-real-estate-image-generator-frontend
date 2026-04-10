@@ -3,8 +3,8 @@ import NewsletterSubscribe from "./NewsletterSubscribe ";
 
 export default function Footer() {
   return (
-    <div className="container mx-auto px-4 md:px-10 pt-8">
-      <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="container mx-auto px-4 md:px-5 pt-8">
+      <div className="grid gap-10 row-gap-6 mb-5 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
           <a href="/" aria-label="Go home" className="inline-flex items-center">
             <img
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col-reverse justify-between pt-5 pb-6 border-t lg:flex-row">
+      <div className="flex flex-col-reverse justify-between pt-3 pb-4 border-t lg:flex-row">
         <p className="text-sm text-gray-600">
           &copy; {new Date().getFullYear()} AIEstateImageGenerator. All rights
           reserved.

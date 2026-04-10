@@ -56,6 +56,10 @@ export const router = createBrowserRouter([
         path: "/terms",
         element: <TermsOfService />,
       },
+      {
+        path: "/*",
+        element: <NotFound />,
+      },
     ],
   },
   {

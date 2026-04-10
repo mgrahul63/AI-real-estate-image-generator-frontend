@@ -1,5 +1,5 @@
 const BASE_URL =
-  import.meta.env.VITE_REACT_API_URL || "http://localhost:5000/api/v1";
+  import.meta.env.VITE_REACT_API_URL || "http://localhost:5173/api/v1";
 
 const apiRequest = async (endpoint, options = {}) => {
   try {
@@ -11,16 +11,39 @@ const apiRequest = async (endpoint, options = {}) => {
       ...options,
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      throw new Error(`API Error: ${response.status}`);
+      return {
+        success: false,
+        message: data?.message || "Something went wrong",
+        status: response.status,
+      };
     }
 
-    return await response.json();
+    return {
+      success: true,
+      data,
+    };
   } catch (error) {
     console.error("API Request Failed:", error);
-    throw error;
+
+    return {
+      success: false,
+      message: "Network error. Please try again.",
+    };
   }
 };
+
+export const test = async () => {
+  const res = await fetch(`${BASE_URL}/test`, {
+    method: "POST",
+  });
+  const data = await res.json();
+
+  if (data.success) return data;
+};
+
 export const generatePropertyInfo = (promptData) => {
   return apiRequest("/openai/generateTextAndImage", {
     method: "POST",
