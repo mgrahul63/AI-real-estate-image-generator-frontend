@@ -2,17 +2,22 @@ import { useState } from "react";
 import DisplayBoard from "./DisplayBoard";
 import Form from "./Form";
 
+import { useContext } from "react";
+import { AuthContext } from "../../../context/authProvider/AuthProvider";
 const PropertyForm = () => {
+  const user = useContext(AuthContext);
+  const email = user?.user?.email;
   const [propertyData, setPropertyData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [jsxData, setJsxData] = useState(null);
   return (
-    <div className="flex flex-col lg:flex-row pt-24 container mx-auto px-4 md:px-2 xl:px-5 gap-5">
+    <div className="flex flex-col lg:flex-row pt-24 container-fluid mx-auto px-4 md:px-2 xl:px-5 gap-5">
       <div>
         <Form
           setPropertyData={setPropertyData}
           setLoading={setLoading}
           setJsxData={setJsxData}
+          email={email}
         />
       </div>
 
@@ -22,6 +27,7 @@ const PropertyForm = () => {
           propertyData={propertyData}
           jsxData={jsxData}
           setJsxData={setJsxData}
+          email={email}
         />
       </div>
     </div>

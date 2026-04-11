@@ -1,5 +1,5 @@
 const BASE_URL =
-  import.meta.env.VITE_REACT_API_URL || "http://localhost:5173/api";
+  import.meta.env.VITE_REACT_API_URL || "http://localhost:5000/api/v1";
 
 const apiRequest = async (endpoint, options = {}) => {
   try {
@@ -21,10 +21,7 @@ const apiRequest = async (endpoint, options = {}) => {
       };
     }
 
-    return {
-      success: true,
-      data,
-    };
+    return data;
   } catch (error) {
     console.error("API Request Failed:", error);
 
@@ -36,7 +33,6 @@ const apiRequest = async (endpoint, options = {}) => {
 };
 
 export const test = async () => {
-  console.log(BASE_URL);
   const res = await fetch(`${BASE_URL}/test`, {
     method: "POST",
   });
@@ -45,11 +41,27 @@ export const test = async () => {
   if (data.success) return data;
 };
 
-export const generatePropertyInfo = (promptData) => {
-  return apiRequest("/openai/generateTextAndImage", {
-    method: "POST",
-    body: JSON.stringify(promptData),
-  });
+export const generatePropertyInfo = async (promptData) => {
+  console.log(promptData);
+  try {
+    const res = await apiRequest("/openai/generateTextAndImage", {
+      method: "POST",
+      body: JSON.stringify(promptData),
+    });
+
+    if (!res?.success) {
+      return {
+        success: false,
+        message: res?.message || "Something went wrong. Please try again.",
+      };
+    }
+    return res;
+  } catch (error) {
+    return {
+      success: false,
+      message: error?.message || "Network error. Please check your connection.",
+    };
+  }
 };
 
 export const fetchProducts = () => {

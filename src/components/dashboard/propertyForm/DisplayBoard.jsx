@@ -1,19 +1,12 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import html2canvas from "html2canvas";
-import Lottie from "lottie-react";
 import { useContext, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import { savePropertyToDb } from "../../../api/ai";
-import imageLoading from "../../../assets/Animation/image-3-loading.json";
 import { AuthContext } from "../../../context/authProvider/AuthProvider";
 import JsxToImage from "../../../ui/jsxToImage/JsxToImage";
 import PDFFile from "../../../ui/pdf/PDF";
-export default function DisplayBoard({
-  propertyData,
-  loading,
-  jsxData,
-  setJsxData,
-}) {
+const DisplayBoard = ({ propertyData, loading, jsxData, setJsxData }) => {
   const { createdText, imageUrl, valuationCost } = propertyData || {};
   const { user } = useContext(AuthContext);
   const jsxRef = useRef(null);
@@ -79,16 +72,14 @@ export default function DisplayBoard({
       <div className="p-4">
         <div className={jsxData ? "hidden" : "block"}>
           {loading ? (
-            <div>
-              <Lottie
-                className="aspect-square w-full p-4 -mt-10"
-                animationData={imageLoading}
-                loop={true}
-              />
+            <div className="flex gap-2 justify-center items-center p-4 -mt-10">
+              <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:150ms]"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:300ms]"></span>
             </div>
           ) : (
             <img
-              className={`w-full aspect-square ${imageUrl || "hidden"} rounded-md shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]`}
+              className={`w-full aspect-square ${imageUrl || "hidden"} rounded-md shadow-[rgba(0,0,0,0.24)_0px_3px_8px]`}
               src={imageUrl}
               alt="property"
             />
@@ -185,4 +176,6 @@ export default function DisplayBoard({
       </div>
     </div>
   );
-}
+};
+
+export default DisplayBoard;

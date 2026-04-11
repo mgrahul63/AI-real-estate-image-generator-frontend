@@ -1,34 +1,52 @@
 import { useForm } from "react-hook-form";
 import { generatePropertyInfo } from "../../../api/ai";
 
-const Form = ({ setPropertyData, setLoading, setJsxData }) => {
+const Form = ({ setPropertyData, setLoading, setJsxData, email }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const arr = Object.entries(data);
     const joinedArr = arr.map((pair) => pair.join(":"));
     const finalPromptData = joinedArr.join("\n");
-    console.log(finalPromptData);
-    const prompt = { prompt: finalPromptData, size: "medium" };
+
+    const prompt = {
+      prompt: finalPromptData,
+      size: "medium",
+      email,
+    };
+
     setJsxData(null);
     setLoading(true);
-    // send request to generate info
-    generatePropertyInfo(prompt)
-      .then((data) => {
-        console.log(data?.imageUrl, data?.createdText, data?.valuationCost);
-        setPropertyData(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err?.message);
-        setLoading(false);
-      });
-  };
 
+    try {
+      const result = await generatePropertyInfo(prompt);
+
+      console.log(result);
+      if (!result.success) {
+        console.log(result.message);
+        setLoading(false);
+        return;
+      }
+
+      const apiData = result.data;
+
+      console.log(
+        apiData?.imageUrl,
+        apiData?.createdText,
+        apiData?.valuationCost,
+      );
+
+      setPropertyData(apiData);
+    } catch (err) {
+      console.log(err?.message);
+    } finally {
+      setLoading(false);
+    }
+  };
   const formBgColor = ["shadow-sm bg-indigo-50 p-5 mb-6"];
 
   const formInputStyles = [
