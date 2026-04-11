@@ -1,8 +1,7 @@
- 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import BlogCard from "./BlogCard";
 import useTitle from "../../hook/useTitle";
+import BlogCard from "./BlogCard";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -14,10 +13,10 @@ const Blog = () => {
 
   useTitle("Blog");
   return (
-    <section className="bg-gray-100">
-      <div className="container px-10 pt-20 md:pt-28 lg:pt-28 pb-20">
+    <section className="bg-gray-100  ">
+      <div className="container px-10 pt-10 md:pt-10 lg:pt-15 pb-20 ">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-xl lg:text-3xl font-bold tracking-tight text-gray-900">
+          <h2 className="text-xl font-bold tracking-tight text-gray-900">
             Latest Insights
           </h2>
           <div className="divider my-1 bg-primary h-[5px] w-[5%]"></div>
@@ -29,7 +28,7 @@ const Blog = () => {
           </p>
         </div>
         <div className="divider mt-0"></div>
-        <div>
+        <div className="flex flex-col gap-2">
           {blogs?.map((blog) => {
             return (
               <Link to={`/blog/${blog._id}`} key={blog._id}>

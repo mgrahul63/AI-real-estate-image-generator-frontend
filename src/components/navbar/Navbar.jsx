@@ -36,17 +36,19 @@ export default function Navbar() {
           aria-label="Global"
         >
           <div className="flex items-center lg:flex-1 ml-5">
-            <Link to="/" className="flex items-center gap-3">
-              {/* Logo Icon (optional) */}
-              <div className="bg-primary w-10 h-10 flex items-center justify-center rounded-full text-white font-bold">
-                AI
-              </div>
-              {/* Company Name */}
-              <span className="text-gray-800 dark:text-white font-bold text-lg">
-                AI Estate
-                <span className="text-primary"> Generator</span>
-              </span>
-            </Link>
+            <div className=" bg-amber-400 bprder border-gray-900 p-2 rounded-xl">
+              <Link to="/" className="flex items-center gap-0">
+                {/* Logo Icon (optional) */}
+                <div className="bg-primary w-10 h-10 flex items-center justify-center rounded-full text-black font-bold">
+                  AI
+                </div>
+                {/* Company Name */}
+                <span className="text-gray-800 font-bold text-lg">
+                  Estate
+                  <span className="text-primary"> Generator</span>
+                </span>
+              </Link>
+            </div>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -105,7 +107,7 @@ export default function Navbar() {
           )}
           <span className="mx-5 hidden lg:block">|</span>
           <Link to="/dashboard">
-            <button className="bg-[#7C6EE4] text-white text-sm p-[10px] rounded-sm hover:bg-gradient-to-r hover:from-blue-500 hover:to-[#7C6EE4] transition hidden lg:block">
+            <button className="bg-[#7C6EE4] text-white text-sm p-2.5 rounded-sm hover:bg-linear-to-r hover:from-blue-500 hover:to-[#7C6EE4] transition hidden lg:block">
               Create Property
             </button>
           </Link>
@@ -186,7 +188,7 @@ export default function Navbar() {
                   </div>
                 )}
                 <Link to="/dashboard">
-                  <button className="bg-primary text-white text-sm py-[5px] px-[7px] rounded-sm hover:bg-gradient-to-r hover:from-blue-500 hover:to-[#7C6EE4] transition block lg:hidden">
+                  <button className="bg-primary text-white text-sm py-1.25 px-1.75 rounded-sm hover:bg-linear-to-r hover:from-blue-500 hover:to-[#7C6EE4] transition block lg:hidden">
                     Create Property
                   </button>
                 </Link>

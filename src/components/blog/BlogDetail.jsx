@@ -31,11 +31,11 @@ const BlogDetail = () => {
 
   return (
     <div className="bg-gray-100 py-12 md:py-16 px-6 md:px-5">
-      <div className="max-w-screen-xl mx-auto ">
+      <div className="max-w-6xl mx-auto ">
         {/* header ends here */}
         <main className="mt-10">
           <div
-            className="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative"
+            className="mb-4 md:mb-0 w-full max-w-3xl mx-auto relative"
             style={{ height: "24em" }}
           >
             <img
@@ -43,7 +43,7 @@ const BlogDetail = () => {
               className="absolute left-0 top-0 w-full h-full z-0 object-cover"
             />
           </div>
-          <div className="flex items-center justify-between w-full max-w-screen-md mx-auto py-1 md:py-5 lg:py-5">
+          <div className="flex items-center justify-between w-full max-w-3xl mx-auto py-1 md:py-5 lg:py-5">
             <div className="flex items-center">
               <div className="rounded-full w-6 h-6 md:w-8 md:h-8 overflow-hidden">
                 <svg
@@ -62,7 +62,7 @@ const BlogDetail = () => {
               Date: <span className="font-semibold">{blog?.date}</span>
             </p>
           </div>
-          <div className=" text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
+          <div className=" text-gray-700 max-w-3xl mx-auto text-lg leading-relaxed">
             <h2 className="text-[21px] md:text-2xl lg:text-2xl text-gray-800 font-semibold mb-2">
               {blog?.title}
             </h2>

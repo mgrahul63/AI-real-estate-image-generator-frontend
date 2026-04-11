@@ -2,11 +2,11 @@ const WhyShoud = () => {
   return (
     <div className="bg-white dark:bg-gray-900">
       <div className="container px-5 lg:px-6 pb-20 pt-10 lg:pt-15 mx-auto">
-        <div className="py-10">
+        <div className="pt-10 pb-5">
           <h1 className="text-3xl lg:text-3xl font-bold tracking text-center dark:text-white">
             Why Choose AI Estate Image Generator?
           </h1>
-          <div className="divider my-3 bg-primary h-[5px] w-[5%] mx-auto"></div>
+          <div className="divider my-3 bg-primary h-1.25 w-[5%] mx-auto"></div>
           <p className="w-full md:w-[70%] lg:w-[60%] text-lg mx-auto text-center dark:text-white ">
             AI Estate Image Generator helps real estate professionals create
             stunning, high-quality property visuals instantly. Generate
@@ -15,7 +15,7 @@ const WhyShoud = () => {
             market.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-8 mt-4 md:mt-12 xl:gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 mt-4 xl:gap-12 md:grid-cols-2 lg:grid-cols-3 mx-auto w-full">
           {/* Card 1 */}
           <div className="p-6 rounded-lg hover:shadow-lg transition bg-white dark:bg-gray-900">
             <svg

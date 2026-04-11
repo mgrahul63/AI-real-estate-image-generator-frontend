@@ -4,18 +4,19 @@ const Faq = () => {
   useTitle("FAQ");
   return (
     <section className="bg-gray-100 ">
-      <div className="container flex flex-col justify-center px-5 md:px-20 lg:px-10 pt-20 md:pt-28 lg:pt-28 pb-20 mx-auto">
-        <h2 className="font-semibold text-2xl md:text-3xl lg:text-3xl">
-          Frequently Asked Questions
-        </h2>
-        <div className="divider my-1 bg-primary h-[5px] w-[5%]"></div>
+      <div className="flex flex-col justify-center px-5 md:px-20 lg:px-10 pt-20 md:pt-28 lg:pt-28 pb-20 mx-auto">
+        <h2 className="font-semibold text-xl">Frequently Asked Questions</h2>
+        <div className="divider my-1 bg-primary h-1.25 w-[5%]"></div>
         <p className="mt-2 mb-8 dark:text-gray-600 lg:w-[60%]">
           Explore answers to common queries about generating AI-powered property
           images, customizing visuals, and using our platform for your real
           estate listings.
         </p>
         <div className="space-y-4">
-          <details className="w-full border rounded-lg border-gray-400 " open>
+          <details
+            className="w-full border rounded-lg border-gray-400 cursor-pointer"
+            open
+          >
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               What is an AI Estate Image Generator?
             </summary>
@@ -27,7 +28,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               How does the AI generate property images?
             </summary>
@@ -39,7 +40,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               Can I customize the AI-generated property images?
             </summary>
@@ -50,7 +51,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               Are these AI-generated images suitable for commercial use?
             </summary>
@@ -61,7 +62,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               Can I download the generated images?
             </summary>
@@ -71,7 +72,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               How accurate are the AI-generated images compared to the actual
               property?
@@ -83,7 +84,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               Does this AI replace professional photographers?
             </summary>
@@ -94,7 +95,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               Can I generate images for multiple properties at once?
             </summary>
@@ -104,7 +105,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               Are the generated images safe to share with clients?
             </summary>
@@ -114,7 +115,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               Does the AI support different property types and styles?
             </summary>
@@ -124,7 +125,7 @@ const Faq = () => {
             </p>
           </details>
 
-          <details className="w-full border rounded-lg border-gray-400">
+          <details className="w-full border rounded-lg border-gray-400 cursor-pointer">
             <summary className="px-4 py-6 font-semibold focus:outline-none">
               Can I use AI-generated images for marketing campaigns?
             </summary>

@@ -3,7 +3,7 @@ import NewsletterSubscribe from "./NewsletterSubscribe ";
 
 export default function Footer() {
   return (
-    <div className="container mx-auto px-4 md:px-5 pt-8">
+    <div className="px-8 md:px-5 pt-8">
       <div className="grid gap-10 row-gap-6 mb-5 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
           <a href="/" aria-label="Go home" className="inline-flex items-center">

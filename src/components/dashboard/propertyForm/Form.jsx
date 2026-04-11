@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { generatePropertyInfo } from "../../../api/ai";
 
-const Form = ({ setPropertyData, setLoading, setJsxData, email }) => {
+const Form = ({ setPropertyData, setLoading, setJsxData, email,displayName }) => {
   const {
     register,
     handleSubmit,
@@ -17,6 +17,7 @@ const Form = ({ setPropertyData, setLoading, setJsxData, email }) => {
       prompt: finalPromptData,
       size: "medium",
       email,
+      displayName
     };
 
     setJsxData(null);
@@ -70,7 +71,7 @@ const Form = ({ setPropertyData, setLoading, setJsxData, email }) => {
   return (
     <section className="-mt-2">
       <div className="w-full px-0 mx-auto">
-        <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded-lg bg-blueGray-100 border-0">
+        <div className="relative flex flex-col min-w-0 wrap-break-word w-full mb-6 rounded-lg bg-blueGray-100 border-0">
           <div className="rounded-t bg-white pb-5">
             <div className="text-center flex justify-between">
               <h6 className="text-2xl lg:text-3xl font-semibold">
@@ -462,21 +463,13 @@ const Form = ({ setPropertyData, setLoading, setJsxData, email }) => {
                 <div>
                   <button
                     type="submit"
-                    className="w-full text-white px-20 py-3 uppercase bg-indigo-500 hover:bg-indigo-400 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5 rounded"
+                    className="w-full text-white px-20 py-3 uppercase bg-indigo-500 hover:bg-indigo-400 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5 rounded cursor-pointer"
                   >
                     Generate Property
                   </button>
                 </div>
                 <div>
-                  {/* <button
-                    type="submit"
-                    className={`w-full text-white px-20 py-3 uppercase bg-[#9f95e9] hover:bg-[#7C6EE4] shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5 ${
-                      isChecked ? "" : "opacity-50 cursor-not-allowed"
-                    }`}
-                    disabled={!isChecked}
-                  >
-                    Generate Poster
-                  </button> */}
+                  
                 </div>
               </div>
             </form>

@@ -1,4 +1,4 @@
-const DisplayModal = ({ propertyData }) => {
+const DisplayModal = ({ propertyData, onClose }) => {
   return (
     <div>
       {/* Put this part before </body> tag */}
@@ -20,6 +20,7 @@ const DisplayModal = ({ propertyData }) => {
             <label
               className="modal-backdrop bg-black text-white px-6 py-2 cursor-pointer rounded"
               htmlFor="display-modal"
+              onClick={onClose}
             >
               Close
             </label>

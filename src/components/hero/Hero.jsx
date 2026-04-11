@@ -8,7 +8,7 @@ const Hero = () => {
       className="bg-no-repeat bg-cover bg-center py-12"
       style={{ backgroundImage: `url(${backgroundImage.heroimage})` }}
     >
-      <div className="container mx-auto px-5 md:px-10 lg:px-10 pt-20">
+      <div className="container px-5 pt-20">
         <div className="flex flex-wrap flex-col-reverse md:flex-row">
           <div className="w-full sm:w-8/12 mb-10">
             <div className="container mx-auto h-full">
@@ -30,15 +30,15 @@ const Hero = () => {
                     realistic AI-generated images tailored for the real estate
                     market.
                   </p>
-                  <div className="flex flex-col md:flex-row gap-4 md:gap-5 w-full md:w-auto">
+                  <div className="flex flex-col md:flex-row gap-4 md:gap-5 w-full ">
                     <Link
                       to="/dashboard"
-                      className="bg-gradient-to-r from-[#260de7] to-[#b9b2f3] rounded-sm shadow transition"
+                      className="bg-linear-to-r from-[#260de7] to-[#b9b2f3] rounded-sm shadow transition"
                     >
                       <ActionButton>Create AI Image</ActionButton>
                     </Link>
                     <Link to="/properties">
-                      <button className="border-2 border-indigo-600 hover:text-gray-950 hover:bg-indigo-50 transition px-6 py-3 rounded-sm w-full md:w-auto text-md cursor-pointer text-gray-300">
+                      <button className="border-2 border-indigo-600 hover:text-gray-950 hover:bg-indigo-50 transition px-6 py-3 rounded-sm w-full text-md cursor-pointer text-gray-300">
                         View Existing Properties
                       </button>
                     </Link>

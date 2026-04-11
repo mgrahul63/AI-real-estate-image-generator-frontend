@@ -7,11 +7,11 @@ const UseGuide = () => {
     >
       <div className="bg-white/80 dark:bg-gray-900/80">
         <div className="container max-w-xl px-6 py-8 lg:py-10 mx-auto space-y-10 md:space-y-24 lg:space-y-24 lg:px-8 lg:max-w-7xl">
-          <div>
-            <h2 className="text-3xl font-bold tracking text-center sm:text-3xl dark:text-gray-50">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold tracking text-center dark:text-gray-50">
               How AI Estate Image Generator Works
             </h2>
-            <div className="divider my-2 bg-primary h-[5px] w-[5%] mx-auto"></div>
+            <div className="divider my-2 bg-primary h-1.25 w-[5%] mx-auto"></div>
             <p className="w-full md:w-[90%] lg:w-[60%] text-lg mx-auto text-center text-gray-500 dark:text-gray-300">
               Generate professional real estate images in just a few steps.
               Simply provide your property details, let AI create stunning
@@ -22,7 +22,7 @@ const UseGuide = () => {
 
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <h3 className="text-2xl font-bold tracking sm:text-2xl dark:text-gray-50">
+              <h3 className="text-xl font-bold tracking dark:text-gray-50">
                 How Our AI Creates Property Images
               </h3>
               <p className="mt-4 dark:text-gray-400">
@@ -50,7 +50,7 @@ const UseGuide = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
+                    <h4 className="text-md leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
                       Create an Account
                     </h4>
                     <p className="mt-2 dark:text-gray-400">
@@ -77,7 +77,7 @@ const UseGuide = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
+                    <h4 className="text-md leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
                       Enter Property Details
                     </h4>
                     <p className="mt-2 dark:text-gray-400">
@@ -105,7 +105,7 @@ const UseGuide = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
+                    <h4 className="text-md leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
                       Generate AI Images
                     </h4>
                     <p className="mt-2 dark:text-gray-400">
@@ -130,7 +130,7 @@ const UseGuide = () => {
           <div>
             <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 lg:items-center overflow-hidden">
               <div className="lg:col-start-2">
-                <h3 className="text-2xl font-bold tracking sm:text-2xl dark:text-gray-50">
+                <h3 className="text-xl font-bold tracking dark:text-gray-50">
                   Property Details with Images
                 </h3>
                 <p className="mt-3 dark:text-gray-400">
@@ -157,7 +157,7 @@ const UseGuide = () => {
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
+                      <h4 className="text-md leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
                         View Property Insights
                       </h4>
                       <p className="mt-2 dark:text-gray-400">
@@ -186,7 +186,7 @@ const UseGuide = () => {
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
+                      <h4 className="text-md leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
                         Save Properties for Later
                       </h4>
                       <p className="mt-2 dark:text-gray-400">
@@ -215,7 +215,7 @@ const UseGuide = () => {
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
+                      <h4 className="text-md leading-6 uppercase text-gray-900 font-semibold dark:text-gray-50">
                         Export as PDF
                       </h4>
                       <p className="mt-2 dark:text-gray-400">

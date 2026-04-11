@@ -42,7 +42,6 @@ export const test = async () => {
 };
 
 export const generatePropertyInfo = async (promptData) => {
-  console.log(promptData);
   try {
     const res = await apiRequest("/openai/generateTextAndImage", {
       method: "POST",
@@ -64,8 +63,28 @@ export const generatePropertyInfo = async (promptData) => {
   }
 };
 
-export const fetchProducts = () => {
-  return apiRequest("/properties");
+export const fetchProducts = async (email = "") => {
+  try {
+    const url = email ? `/properties?email=${email}` : `/properties`;
+
+    const res = await apiRequest(url, {
+      method: "GET",
+    });
+
+    if (!res?.success) {
+      return {
+        success: false,
+        message: res?.message || "Something went wrong. Please try again.",
+      };
+    }
+
+    return res;
+  } catch (error) {
+    return {
+      success: false,
+      message: error?.message || "Network error. Please check your connection.",
+    };
+  }
 };
 
 export const savePropertyToDb = (propertyData) => {

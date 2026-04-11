@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { fetchProducts, test } from "../../api/ai";
+import { AuthContext } from "../../context/authProvider/AuthProvider";
 import useTitle from "../../hook/useTitle";
 import Loading from "../../ui/loading/Loading";
 import DisplayModal from "./DisplayModal";
@@ -10,7 +11,9 @@ import PropertiesCard from "./propertiesCard";
 const PRODUCTS_PER_PAGE = 12;
 
 const Properties = () => {
+  const { user } = useContext(AuthContext);
   const [productData, setProductData] = useState([]);
+  const [yourProductData, setYourProductData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [propertyData, setPropertyData] = useState(null);
@@ -18,32 +21,46 @@ const Properties = () => {
 
   useTitle("Properties");
 
+  // console.log(user.email);
   useEffect(() => {
     const loadProducts = async () => {
       try {
         setIsLoading(true);
         setError(null);
 
-        const data = await fetchProducts();
-        if (data.success == false) {
-          setError(data.message);
+        const [allProducts, userProducts] = await Promise.all([
+          fetchProducts(),
+          user?.email
+            ? fetchProducts(user.email)
+            : Promise.resolve({ success: true, data: [] }),
+        ]);
+
+        if (allProducts.success) {
+          setProductData(allProducts.data);
         }
-        if (data.success) setProductData(data.data);
+
+        if (userProducts.success) {
+          setYourProductData(userProducts.data);
+        }
       } catch (err) {
         console.error("Fetch Products Error:", err);
-        setError(err.message || "Something went wrong");
+        setError("Failed to load properties");
       } finally {
         setIsLoading(false);
       }
     };
 
     loadProducts();
-  }, []);
+  }, [user?.email]);
 
-  const pageCount = Math.ceil(productData.length / PRODUCTS_PER_PAGE);
+  const newProductData = productData.filter(
+    (pr) => !yourProductData.some((p) => p.email === pr.email),
+  );
+
+  const pageCount = Math.ceil(newProductData.length / PRODUCTS_PER_PAGE);
 
   const startIndex = currentPage * PRODUCTS_PER_PAGE;
-  const displayedProducts = productData.slice(
+  const displayedProducts = newProductData.slice(
     startIndex,
     startIndex + PRODUCTS_PER_PAGE,
   );
@@ -59,9 +76,8 @@ const Properties = () => {
       if (res.success) {
         toast.success(res.data);
       }
-    } catch (error) {} 
+    } catch (error) {}
   };
-
 
   if (isLoading) return <Loading />;
 
@@ -85,6 +101,15 @@ const Properties = () => {
       <div className="container mx-auto pt-20 md:pt-24 lg:pt-28 pb-10 lg:pb-20 px-5 md:px-2">
         {/* Properties Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+          {yourProductData?.length > 0 &&
+            yourProductData?.map((product) => (
+              <PropertiesCard
+                key={product?._id}
+                product={product}
+                yours={true}
+                setPropertyData={setPropertyData}
+              />
+            ))}
           {displayedProducts?.length > 0 ? (
             displayedProducts?.map((product) => (
               <PropertiesCard
