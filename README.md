@@ -206,7 +206,9 @@ frontend
 # 👨‍💻 Author
 
 **MD. Rahul Mia**
+
 Frontend & Full Stack Developer
+
 Jatiya Kabi Kazi Nazrul Islam University ([JKKNIU](https://www.jkkniu.edu.bd/))
 
 ---
